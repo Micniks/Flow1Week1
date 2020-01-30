@@ -20,7 +20,7 @@ public class CustomerFacadeTest {
 
     private final static CustomerFacade cf = new CustomerFacade();
 
-    private void cleanUp() {
+    private static void cleanUp() {
         try {
             EntityManager em = cf.getManager();
             EntityTransaction t = em.getTransaction();
@@ -32,14 +32,14 @@ public class CustomerFacadeTest {
         }
     }
 
-    // VIRKER IKKE
+    // DOES NOT WORK!
 //    @BeforeEach
 //    public void setUp() {
 //        cleanUp();
 //    }
     
     @AfterAll
-    public void tearDown() {
+    public static void tearDown() {
         cleanUp();
     }
 

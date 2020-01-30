@@ -58,6 +58,27 @@ public class EmployeeFacade {
             TypedQuery tq = em.createQuery("SELECT e FROM Employee e WHERE e.name = :name", Employee.class);
             tq.setParameter("name", name);
             return tq.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    public List<Employee> getAllEmployees() {
+        EntityManager em = getEntityManager();
+        try {
+            TypedQuery tq = em.createQuery("SELECT e FROM Employee e", Employee.class);
+            return tq.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    public Employee getEmployeesWithHighestSalary() {
+        EntityManager em = getEntityManager();
+        try {
+            TypedQuery tq = em.createQuery("SELECT e FROM Employee e WHERE e.salary = (SELECT MAX(e.salary)) FROM Employee", Employee.class);
+            Employee employee = (Employee) tq.getSingleResult();
+            return employee;
         } catch (NoResultException ex) {
             return null;
         } finally {
@@ -65,16 +86,17 @@ public class EmployeeFacade {
         }
     }
 
-    public List<Employee> getAllEmployees() {
-        return null;
-    }
-
-    public Employee getEmployeesWithHighestSalary() {
-        return null;
-    }
-
     public Employee createEmployee(String name, String address, double salary) {
-        return null;
+        Employee employee = new Employee(name, address, salary);
+        EntityManager em = getEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.persist(employee);
+            em.getTransaction().commit();
+            return employee;
+        } finally {
+            em.close();
+        }
     }
 
 }

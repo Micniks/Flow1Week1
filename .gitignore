@@ -92,3 +92,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/java,macos,windows,netbeans
+/torsdag/nbproject/
+/torsdag/target/
+/bankCustomer/nbproject/
+/bankCustomer/target/

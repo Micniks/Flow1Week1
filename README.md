@@ -6,6 +6,8 @@ Michael N. K.
 Overall note: All assignments that required cloning of a reporsitory was not followed, but created manually, as the clones encountered many bugs with Netbeans.
 
 
+
+
 01-tuesday-exercises:
 
 These exercises covers the JPA part of the weekly progress, with focus on entity classes and transactions.
@@ -20,6 +22,8 @@ This project was also affected by assignments from wednesday, and is as such onl
 The CustomerFacade class was the EntityTested class, but was refactored during the assignment.
 
 
+
+
 02-wednesday-exercises:
 
 These exercises covers the use of REST from the weekly progress, with use of Json formatting.
@@ -27,11 +31,15 @@ These exercises covers the use of REST from the weekly progress, with use of Jso
 All of the exercises steps was compleded, with a bit of confusion from the tutorial. All parts of the exercises should be able to be found in classes with logical names.
 
 
+
+
 03-thursday-exercises:
 
 These exercives covers the weeks focus on JPA with Web service.
 
 All assignments were completed, and all results were as expected, including the droplets inability to connect to use the war, given the vagrant database cannot be reached.
+
+
 
 
 04-friday-exercises:
